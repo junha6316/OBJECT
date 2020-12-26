@@ -7,11 +7,5 @@ class Theater:
         self.__ticketSeller = ticketSeller
 
     def enter(self, audience):
-        if audience.getBag().hasInvitation():
-            ticket = self.__ticketSeller.getTicketOffice().getTicket()
-            audience.getBag().setTicket(ticket)
-        else:
-            ticket = self.__ticketSeller.getTicket()
-            audience.getBag().minusAmount(ticket.getFee())
-            self.__ticketSeller.getTicketOffice().plusAmount(ticket.getFee())
-            audience.getBag().setTicket(ticket)
+        self.__ticketSeller.sellTo(audience)
+        
