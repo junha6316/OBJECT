@@ -10,8 +10,7 @@ class Bag():
         self.__invitation = attr.get('invitation')
         self.__amount = attr.get('amount')
         return
-    
-    
+
     def hasInvitation(self):
         return self.__invitation != None
 
@@ -26,3 +25,10 @@ class Bag():
     
     def plusAmount(self, amount):
         self.__ amount += amount
+
+    def hold(self, ticket):
+        if self.hasInvitation():
+            self.setTicket(ticket)
+            self.minusAmount(ticket.getFee())
+            return ticket.getFee()
+        

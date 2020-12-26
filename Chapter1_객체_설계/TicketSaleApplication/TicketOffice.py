@@ -6,6 +6,9 @@ class TicketOffice:
         self.__amount = attr.get('amount')
         self.__tickets = attr.get('tickets')
 
+    def sellTicketTo(self, audience):
+        self.plusAmount(audience.buy(getTicket()))
+        
     def getTicket(self):
         return self.__tickets.pop(0)
 
@@ -15,4 +18,4 @@ class TicketOffice:
     def plusAmount(self, amount):
         self.__amount += amount
 
-        
+

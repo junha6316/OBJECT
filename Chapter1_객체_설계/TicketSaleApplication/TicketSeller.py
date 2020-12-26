@@ -9,5 +9,5 @@ class TicketSeller:
         return self.__ticketOffice
     
     def sellTo(self, audience):
-        ticketOffice.plusAmount(audience.buy(ticketOffice.getTicket()))
+        ticketOffice.sell(audience)
 
